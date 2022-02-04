@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Notes.Application.Common.Mappings
 {
-    public interface IMapWith
+    public interface IMapWith<T>
     {
+
     }
 }
