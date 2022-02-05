@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Notes.Application.Interfaces;
 using Notes.Domain;
 using System;
 using System.Collections.Generic;
@@ -9,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace Notes.Application.Notes.Commands.CreateNote
 {
-    public class CreateCommandNoteHandler:IRequestHandler<CreateNoteCommand, Guid>
+    public class CreateNoteCommandNoteHandler:IRequestHandler<CreateNoteCommand, Guid>
     {
         private readonly INotesDbContext _dbContext;
-        public CreateCommandNoteHandler(INotesDbContext dbContext) => _dbContext = dbContext;
+        public CreateNoteCommandNoteHandler(INotesDbContext dbContext) => _dbContext = dbContext;
         public async Task<Guid> Handle(CreateNoteCommand request, CancellationToken cancellationToken)
         {
             var note = new Note

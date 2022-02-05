@@ -8,6 +8,7 @@ using AutoMapper;
 using System.Threading;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
+using Notes.Application.Interfaces;
 
 namespace Notes.Application.Notes.Queries.GetNoteList
 {
