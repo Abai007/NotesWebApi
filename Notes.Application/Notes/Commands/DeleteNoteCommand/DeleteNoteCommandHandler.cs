@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Notes.Application.Common;
+using Notes.Application.Interfaces;
 using Notes.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace Notes.Application.Notes.Commands.DeleteNoteCommand
 {
@@ -22,7 +20,7 @@ namespace Notes.Application.Notes.Commands.DeleteNoteCommand
                 throw new NotFoundExeption(nameof(Note), request.Id);
             }
             _dbContext.Notes.Remove(entity);
-            await _dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }
     }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Notes.Application.Common;
+using Notes.Application.Interfaces;
 using Notes.Domain;
 
 namespace Notes.Application.Notes.Commands.UpdateNote
